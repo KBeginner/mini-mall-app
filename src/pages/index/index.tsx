@@ -4,7 +4,43 @@ import { View } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import './index.scss'
 
-export default class Index extends Component {
+import { Good } from '../../common/interface'
+import ListItem from '../../components/ListItem/index'
+
+interface State {
+  list?: Array<Good>
+}
+export default class Index extends Component<{}, State> {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      list: [
+        {
+          id: '3242423',
+          title: '',
+          price: 198,
+          origPrice: 249,
+          isFovorited: true,
+          isSale: false,
+          images: [
+            require('../../assets/images/good0.png')
+          ]
+        },
+        {
+          id: '3325423',
+          title: '',
+          price: 198,
+          origPrice: 249,
+          isFovorited: false,
+          isSale: false,
+          images: [
+            require('../../assets/images/good2.png')
+          ]
+        },
+      ]
+    }
+  }
 
   componentWillMount() { }
 
@@ -12,27 +48,18 @@ export default class Index extends Component {
 
   componentWillUnmount() { }
 
-  componentDidShow() {
-    const page = Taro.getCurrentPages()[0]
-    if (typeof page.getTabBar === 'function' && page.getTabBar()) {
-      console.log(page)
-      page.getTabBar().setData({
-        selected: 0
-      })
-    }
-  }
+  componentDidShow() { }
 
   componentDidHide() { }
 
   render() {
+    let listDom = this.state.list.map(el => (<View className="item"><ListItem data={el} /></View>))
     return (
-      <view>首页</view>
-      // <View className='index'>
-      //   <AtButton>按钮文案</AtButton>
-      //   <AtButton type='primary'>按钮文案</AtButton>
-      //   <AtButton type='secondary'>按钮文案</AtButton>
-      //   <AtButton loading type='primary'>按钮文案</AtButton>
-      // </View>
+      <View className='index'>
+        <View className='list'>
+          { listDom }
+        </View>
+      </View>
     )
   }
 }

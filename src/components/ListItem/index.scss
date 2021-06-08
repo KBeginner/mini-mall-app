@@ -1,0 +1,23 @@
+.list-item {
+    width: 345rpx;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+
+    .main-image {
+        width: 341rpx;
+        height: 341rpx;
+    }
+
+    .favorites{
+        position: absolute;
+        right: 13.5rpx;
+        top: 13.5rpx;
+        background-color: #ffffff;
+        padding: 10rpx 8rpx 6rpx 8rpx;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
