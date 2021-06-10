@@ -11,7 +11,8 @@ interface Props {
 }
 
 interface State {
-  goods?: Array<string>
+  goods?: Array<string>,
+  isFavorited: boolean
 }
 
 export default class Index extends Component<Props, State> {
@@ -19,6 +20,7 @@ export default class Index extends Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
+      isFavorited: false,
       goods: [
         require('../../assets/images/good0.png'),
         require('../../assets/images/good1.png'),
@@ -31,7 +33,9 @@ export default class Index extends Component<Props, State> {
   componentWillMount() { }
 
   componentDidMount() {
-    console.log(this.props.data)
+    this.setState({
+      isFavorited: this.props.data.isFavorited
+    })
   }
 
   componentWillUnmount() { }
@@ -41,20 +45,29 @@ export default class Index extends Component<Props, State> {
   componentDidHide() { }
 
   toogleFavorites() {
-
+    this.setState({
+      isFavorited: !this.state.isFavorited
+    }, ()=> {
+      // 执行收藏api
+    })
   }
 
-  onHandle() {
-
+  goDetail(e) {
+    console.log(e)
+    e.stopPropagation();
+    console.log('click')
   }
 
   render() {
     let data = this.props.data
     return (
-      <View className='list-item' onClick={this.onHandle.bind(this, data.id)}>
+      <View className='list-item' onClick={this.goDetail.bind(data.id)}>
         <Image className='main-image' lazyLoad={true} src={data.images[0]} mode="aspectFit" />
         <View className='favorites' onClick={this.toogleFavorites.bind(this)}>
-          <AtIcon value={data.isFovorited ? 'heart-2' : 'heart'} size='18' color={data.isFovorited ? '#cccccc' : '#000000'}></AtIcon>
+          <AtIcon size='18' 
+            value={this.state.isFavorited ? 'heart-2' : 'heart'} 
+            color={this.state.isFavorited ? '#cccccc' : '#000000'}
+          ></AtIcon>
         </View>
 
       </View>

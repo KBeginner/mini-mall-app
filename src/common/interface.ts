@@ -3,7 +3,7 @@ export interface Good {
     title : string,
     price : number,
     origPrice : number,
-    isFovorited : boolean,
+    isFavorited : boolean,
     isSale : boolean,
     images : Array<string>,
 }

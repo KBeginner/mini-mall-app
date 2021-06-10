@@ -21,7 +21,7 @@ export default class Index extends Component<{}, State> {
           title: '',
           price: 198,
           origPrice: 249,
-          isFovorited: true,
+          isFavorited: true,
           isSale: false,
           images: [
             require('../../assets/images/good0.png')
@@ -32,7 +32,7 @@ export default class Index extends Component<{}, State> {
           title: '',
           price: 198,
           origPrice: 249,
-          isFovorited: false,
+          isFavorited: false,
           isSale: false,
           images: [
             require('../../assets/images/good2.png')
