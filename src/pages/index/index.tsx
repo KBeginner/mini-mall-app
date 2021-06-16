@@ -5,6 +5,7 @@ import { AtButton } from 'taro-ui'
 import './index.scss'
 
 import { Good } from '../../common/interface'
+import data from '../../api/data'
 import ListItem from '../../components/ListItem/index'
 
 interface State {
@@ -15,30 +16,7 @@ export default class Index extends Component<{}, State> {
   constructor(props) {
     super(props)
     this.state = {
-      list: [
-        {
-          id: '3242423',
-          title: '',
-          price: 198,
-          origPrice: 249,
-          isFavorited: true,
-          isSale: false,
-          images: [
-            require('../../assets/images/good0.png')
-          ]
-        },
-        {
-          id: '3325423',
-          title: '',
-          price: 198,
-          origPrice: 249,
-          isFavorited: false,
-          isSale: false,
-          images: [
-            require('../../assets/images/good2.png')
-          ]
-        },
-      ]
+      list: data
     }
   }
 
@@ -53,7 +31,7 @@ export default class Index extends Component<{}, State> {
   componentDidHide() { }
 
   render() {
-    let listDom = this.state.list.map(el => (<View className="item"><ListItem data={el} /></View>))
+    let listDom = this.state.list.map((el, index) => (<View className='item' key={index}><ListItem data={el} /></View>))
     return (
       <View className='index'>
         <View className='list'>

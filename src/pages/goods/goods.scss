@@ -1,0 +1,68 @@
+@import "~taro-ui/dist/style/components/icon.scss";
+
+.goods {
+
+    .swiper-container {
+        position: relative;
+
+        .image-swiper {
+            width: 750rpx;
+            height: 750rpx;
+    
+            .image{
+                width: 100%;
+            }
+    
+        }
+
+        .swiper-index {
+            position: absolute;
+            right: 20rpx;
+            bottom: 20rpx;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5rpx 20rpx;
+            color: #fff;
+            border-radius: 30rpx;
+        }
+
+    }
+
+    .goods-info {
+        padding: 30rpx;
+        align-items: flex-start;
+
+        .title {
+            font-weight: 600;
+            font-size: 35rpx;
+            margin-bottom: 20rpx;
+        }
+
+        .price {
+            color: #999;
+            .hot-price{
+                color:#cc3300;
+                position: relative;
+                &:after {
+                    content: '';
+                    width: 120rpx;
+                    height: 2rpx;
+                    background-color: #666666;
+                    position: absolute;
+                    right: -200rpx;
+                    top: 50%;
+                    transform: translateX(-50%);
+                }   
+            }
+        }
+
+        .share {
+            font-size: 25px;
+            color: #999;
+
+            .text {
+                margin-top: 8rpx;
+            }
+        }
+    }
+    
+}

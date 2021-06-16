@@ -4,3 +4,21 @@
 @import "~taro-ui/dist/style/components/button.scss";
 @import "~taro-ui/dist/style/components/toast.scss";
 @import "~taro-ui/dist/style/components/icon.scss";
+
+.row-flex-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

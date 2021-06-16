@@ -4,7 +4,8 @@ export default {
     'pages/login/login',
     'pages/category/category',
     'pages/cart/cart',
-    'pages/user/user'
+    'pages/user/user',
+    'pages/goods/goods'
   ],
   subPackages: [],
   window: {
