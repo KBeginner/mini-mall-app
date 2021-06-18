@@ -1,3 +1,5 @@
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/list.scss";
 @import "~taro-ui/dist/style/components/icon.scss";
 
 .goods {
@@ -30,11 +32,13 @@
     .goods-info {
         padding: 30rpx;
         align-items: flex-start;
+        margin-bottom: 20rpx;
 
         .title {
             font-weight: 600;
             font-size: 35rpx;
             margin-bottom: 20rpx;
+            padding-right: 20rpx;
         }
 
         .price {
@@ -44,11 +48,11 @@
                 position: relative;
                 &:after {
                     content: '';
-                    width: 120rpx;
+                    width: 140rpx;
                     height: 2rpx;
                     background-color: #666666;
                     position: absolute;
-                    right: -200rpx;
+                    right: -220rpx;
                     top: 50%;
                     transform: translateX(-50%);
                 }   
@@ -65,4 +69,60 @@
         }
     }
     
+    .promotions {
+        font-size: 25rpx;
+        padding: 0 30rpx;
+
+        .pro-item {
+            padding: 20rpx 0;
+            border-top: 1px solid #f1f1f1;
+
+            .title-icon {
+                background-color: #0033cc;
+                padding: 8rpx 25rpx;
+                color: #fff;
+                margin-right: 30rpx;
+                font-size: 21rpx;
+            }
+        }
+
+    }
+
+    .specific {
+        font-size: 25rpx;
+        padding: 0 30rpx;
+        border-top: 18rpx solid #f8f8f8;
+        border-bottom: 18rpx solid #f8f8f8;
+
+        .spe-item {
+            padding: 20rpx 0;
+            border-top: 1px solid #f1f1f1;
+
+            .title {
+                padding: 8rpx 20rpx;
+                color: #999;
+                margin-right: 30rpx;
+            }
+        }
+
+        .spe-item:first-child {
+            border-top: none;
+        }
+    }
+
+    .parameter {
+        padding: 30rpx;
+        border-bottom: 1px solid #f8f8f8;
+
+        .title {
+            font-size: 30rpx;
+            font-weight: 600;
+        }
+
+        .param-item {
+            margin-top: 20rpx;
+            font-size: 25rpx;
+            color: #999;
+        }
+    }
 }

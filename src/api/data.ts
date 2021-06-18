@@ -1,3 +1,8 @@
+import goods0 from '../assets/images/good0.png';
+import goods1 from '../assets/images/good1.png';
+import goods2 from '../assets/images/good2.png';
+import goods3 from '../assets/images/good3.png';
+
 export default [
     {
         id: '3243423',
@@ -7,8 +12,7 @@ export default [
         isFavorited: true,
         promotions: [],
         images: [
-            '../../assets/images/good3.png',
-            '../../assets/images/good0.png'
+            goods0
         ]
     },
     {
@@ -23,7 +27,7 @@ export default [
             disPrice: 139
         }],
         images: [
-            '../../assets/images/good1.png',
+            goods2,
             '../../assets/images/good0.png'
         ]
     },
@@ -39,9 +43,7 @@ export default [
             disPrice: 189
         }],
         images: [
-            '../../assets/images/good2.png',
-            '../../assets/images/good3.png',
-            '../../assets/images/good0.png'
+            goods3
         ]
     },
     {
@@ -52,7 +54,7 @@ export default [
         isFavorited: false,
         promotions: [],
         images: [
-            '../../assets/images/good0.png'
+            goods1
         ]
     },
 ]
