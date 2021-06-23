@@ -94,12 +94,14 @@ export default class Goods extends Component<{}, State> {
               </View>
             </View>
             <View className='promotions'>
-              {data.promotions.map((el, index) => (
-                <View className='pro-item row-flex-start' key={index}>
-                  <View className='title-icon'>活动</View>
-                  <View>{el.title}</View>
-                </View>
-              ))}
+              {
+                data.promotions.map((el, index) => (
+                  <View className='pro-item row-flex-start' key={index}>
+                    <View className='title-icon'>活动</View>
+                    <View>{el.title}</View>
+                  </View>
+                ))
+              }
             </View>
             <View className='specific'>
                 <View className='spe-item row-flex-between'>
